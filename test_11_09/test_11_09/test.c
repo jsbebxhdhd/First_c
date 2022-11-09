@@ -51,12 +51,17 @@ int main() {
 		注：字符串的结束标志是一个 \0 的转义字符。
 		在计算字符串长度的时候 \0 是结束标志，不算作字符串内容。 
 		"hello";
-		strlen() 求字符串的长度 函数从字符串的开头位置依次向后计数，直到遇见\0，然后返回计时器的值。最终统计的字符串长度不包括\0。
+		strlen() 求字符串的长度 
+			函数从字符串的开头位置依次向后计数，直到遇见\0，然后返回计时器的值。最终统计的字符串长度不包括\0。
 		头文件：string.h
 	*/
-	char arr1[] = "abcd";
+	/*char arr1[] = "abcd";
 	char arr2[] = { 'a', 'b', 'c', 'd','\0'};
 	printf("%d\n", strlen(arr1));
-	printf("%d\n", strlen(arr2));
+	printf("%d\n", strlen(arr2));*/
+	//printf("%c\n",'\x41');
+	printf("%d\n", strlen("abcdef"));
+	// \62被解析成一个转义字符
+	printf("%d\n", strlen("c:\test\121\test.c"));
 	return 0;
 }
