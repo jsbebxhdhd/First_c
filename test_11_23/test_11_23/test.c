@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include<stdio.h>
+//#include<stdio.h>
 //
 //int main() {
 	//指针初阶
@@ -100,15 +100,73 @@
 //	return 0;
 //}
 
-int main() {
-	//int arr[10] = { 0 };//整型数组
-	//char ch[10] = { '0' };//字符数组
-	//int* p[10];//整型指针数组
-	char a = -1;
-	signed char b = -1;
-	unsigned char c = -1;
-	printf("a=%d,b=%d,c=%d", a, b, c);
-	return 0;
+//int main() {
+//	//int arr[10] = { 0 };//整型数组
+//	//char ch[10] = { '0' };//字符数组
+//	//int* p[10];//整型指针数组
+//	char a = -1;
+//	signed char b = -1;
+//	unsigned char c = -1;
+//	printf("a=%d,b=%d,c=%d", a, b, c);
+//	return 0;
+//
+//	return 0;
+//}
 
+//判断a[N][N]是否关于主对角线对称（左斜），若对称输出 1 ，否则输出 0 。
+//int main() {
+//	int arr[4][4] = {
+//		{1,2,3,4},
+//		{5,6,7,8},
+//		{9,10,11,12},
+//		{13,14,15,16}
+//	};
+//
+//	return 0;
+//}
+
+//#include <stdio.h>
+//#define N 4
+//void main() {
+//	int i, j, flag = 1;
+//	int arr[N][N] = {
+//		{1,5,9,13},
+//		{5,6,10,14},
+//		{9,10,11,15},
+//		{13,14,15,16}
+//	};
+//	for (i = 0; i < N; i++)
+//		for (j = 0; j < i; j++)
+//			if (arr[i][j] != arr[j][i]) {
+//				flag = 0;
+//				break;
+//			}
+//	if (flag == 1)
+//		printf("1");
+//	else
+//		printf("0");
+//}
+#include <stdio.h>
+#define N 4
+int main() {
+	int i, j, flag = 1;
+	int arr[N][N] = {
+		{16,15,14,13},
+		{15,11,10,14},
+		{14,10,11,15},
+		{13,14,15,16}
+	};
+	for (i = 0; i < N; i++) {
+		for (j = 0; j < i; j++) {
+			if (arr[i][j] != arr[N - 1 - j][N - 1 - i]) {
+				flag = 0;
+				break;
+			}
+		}
+	}
+	if (flag == 1)
+		printf("1");
+	else
+		printf("0");
 	return 0;
 }
